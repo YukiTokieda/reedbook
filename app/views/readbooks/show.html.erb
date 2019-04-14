@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Titke:</strong>
+  <%= @readbook.title %>
+</p>
+
+<p>
+  <strong>author:</strong>
+  <%= @readbook.author %>
+</p>
+
+<%= link_to 'Edit', edit_readbook_path(@readbook) %> |
+<%= link_to 'Back', readbooks_path %>

@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Readbooks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>title</th>
+      <th>author</th>
+      <th>review</th>
+      <th>image</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @readbooks.each do |readbook| %>
+      <tr>
+        <td><%= readbook.title %></td>
+        <td><%= readbook.author %></td>
+        <td><%= readbook.review %></td>
+        <td><%= readbook.image %></td>
+        <td><%= link_to 'Show', readbook %></td>
+        <td><%= link_to 'Edit', edit_readbook_path(readbook) %></td>
+        <td><%= link_to 'Destroy', readbook, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= paginate(@readbooks) %>
+<br>
+
+<%= link_to 'New Readbook', new_readbook_path %>

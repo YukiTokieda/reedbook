@@ -1,6 +1,5 @@
 class ReadbooksController < ApplicationController
-  before_action :set_readbook, only: [:show, :edit, :update, :destroy]
-
+  before_action :move_to_index, except: [:show, :index]
   # GET /readbooks
   # GET /readbooks.json
   def index
@@ -68,6 +67,9 @@ class ReadbooksController < ApplicationController
       @readbook = Readbook.find(params[:id])
     end
 
+    def move_to_index
+      redirect_to action: :index unless user_signed_in?
+    end
     # Never trust parameters from the scary internet, only allow the white list through.
     def readbook_params
       params.require(:readbook).permit(:title, :author, :review, :image)

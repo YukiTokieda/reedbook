@@ -1,13 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Titke:</strong>
-  <%= @readbook.title %>
-</p>
-
-<p>
-  <strong>author:</strong>
-  <%= @readbook.author %>
+  <strong>Title:</strong>
+  <%=  readbook_url.titleize %>
 </p>
 
 <%= link_to 'Edit', edit_readbook_path(@readbook) %> |

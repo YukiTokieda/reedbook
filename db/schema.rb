@@ -13,8 +13,8 @@
 ActiveRecord::Schema.define(version: 2019_04_14_081742) do
 
   create_table "readbooks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "title"
-    t.integer "author"
+    t.string "title"
+    t.string "author"
     t.text "review"
     t.text "image"
     t.datetime "created_at", null: false

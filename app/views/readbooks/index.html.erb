@@ -2,6 +2,18 @@
 
 <h1>Readbooks</h1>
 
+<% if user_signed_in? %>
+        <div class="user_nav grid-6">
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+          <%= link_to '投稿する', new_readbook_path %>
+        </div>
+      <% else %>
+        <div class="grid-6">
+          <%= link_to "ログイン", new_user_session_path, class: 'post' %>
+          <%= link_to "新規登録", new_user_registration_path, class: 'post' %>
+        </div>
+      <% end %>
+
 <table>
   <thead>
     <tr>
@@ -29,5 +41,3 @@
 </table>
 <%= paginate(@readbooks) %>
 <br>
-
-<%= link_to 'New Readbook', new_readbook_path %>
